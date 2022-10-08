@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Crud;
 use Illuminate\Http\Request;
+use Session;
 
 class CrudController extends Controller
 {
@@ -24,6 +26,13 @@ class CrudController extends Controller
             'email.email'=>'Email must be a valid email',
         ];
         $this->validate($request, $rules, $cm);
-        return $request->all();
+
+        $crud = new Crud();
+        $crud->name = $request->name;
+        $crud->email = $request->email;
+        $crud->save();
+        Session::flash('msg','Data successfully added');
+
+        return redirect()->back();
     }
 }
