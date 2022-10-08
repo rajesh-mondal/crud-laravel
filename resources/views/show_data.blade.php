@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-        <a href="" class="btn btn-primary my-3">Add Data</a>
+        <a href="{{url('/add-data')}}" class="btn btn-primary my-3">Add Data</a>
         <table class="table">
             <thead>
                 <tr>

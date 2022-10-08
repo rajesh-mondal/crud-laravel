@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/',[CrudController::class,'showData']);
+Route::get('/add-data',[CrudController::class,'addData']);
