@@ -9,14 +9,21 @@
   <body>
     <div class="container">
         <a href="{{url('/')}}" class="btn btn-primary my-3">Show Data</a>
-        <form action="" method="post">
+        <form action="{{ url('/store-data') }}" method="post">
+            @csrf
             <div class="form-group">
                 <label for="" class="form-label">Name</label>
-                <input type="text" name="form-control" name="name" placeholder="Enter your name">
+                <input type="text" class="form-control" name="name" placeholder="Enter your name">
+                @error('name')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="" class="form-label">Email</label>
-                <input type="email" name="form-control" name="email" placeholder="Enter your email">
+                <input type="text" class="form-control" name="email" placeholder="Enter your email">
+                @error('email')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <input type="submit" class="btn btn-primary my-3" value="Submit">
         </form>
