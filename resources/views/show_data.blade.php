@@ -9,6 +9,9 @@
   <body>
     <div class="container">
         <a href="{{url('/add-data')}}" class="btn btn-primary my-3">Add Data</a>
+        @if(Session::has('msg'))
+            <p class="alert alert-success">{{ Session::get('msg') }}</p>
+        @endif
         <table class="table table-bordered">
             <thead>
               <tr>

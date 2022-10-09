@@ -34,6 +34,6 @@ class CrudController extends Controller
         $crud->save();
         Session::flash('msg','Data successfully added');
 
-        return redirect()->back();
+        return redirect('/');
     }
 }
