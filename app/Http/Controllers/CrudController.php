@@ -9,7 +9,8 @@ use Session;
 class CrudController extends Controller
 {
     public function showData(){
-        return view('show_data');
+        $showData = crud::all();
+        return view('show_data', compact('showData'));
     }
     public function addData(){
         return view('add_data');
