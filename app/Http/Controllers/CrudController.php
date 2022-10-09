@@ -9,7 +9,9 @@ use Session;
 class CrudController extends Controller
 {
     public function showData(){
-        $showData = crud::all();
+        // $showData = crud::all();
+        // $showData = crud::paginate(5);
+        $showData = crud::simplePaginate(5);
         return view('show_data', compact('showData'));
     }
     public function addData(){
