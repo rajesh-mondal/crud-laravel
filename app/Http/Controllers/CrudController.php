@@ -64,7 +64,13 @@ class CrudController extends Controller
         $crud->email = $request->email;
         $crud->save();
         Session::flash('msg','Data successfully updated');
+        return redirect('/');
+    }
 
+    public function deleteData($id=null){
+        $deleteData = Crud::find($id);
+        $deleteData->delete();
+        Session::flash('msg','Data successfully deleted');
         return redirect('/');
     }
 }
