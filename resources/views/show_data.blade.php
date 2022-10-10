@@ -18,6 +18,7 @@
                 <th scope="col">SL</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th> 
+                <th scope="col">Action</th> 
               </tr>
             </thead>
             <tbody>
@@ -26,6 +27,10 @@
                 <td>{{ $key+1 }}</td>
                 <td>{{ $data->name }}</td>
                 <td>{{ $data->email }}</td>
+                <td>
+                  <a href="{{ url('/edit-data/'.$data->id) }}" class="btn btn-success">Edit</a>
+                  <a href="" class="btn btn-danger">Delete</a>
+                </td>
               </tr>
               @endforeach
             </tbody>
